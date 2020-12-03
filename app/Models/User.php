@@ -40,4 +40,19 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * The articles that belong to the user.
+     */
+    public function articles()
+    {
+        return $this->belongsToMany('App\Models\User');
+    }
+
+    public function getAllArticles()
+    {
+        $user = App\Models\User::find(1);
+
+        return $user->articles;
+    }
 }

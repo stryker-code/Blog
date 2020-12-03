@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Article extends Model
 {
     use HasFactory;
+
+    /**
+     * The users that belong to the article.
+     */
+    public function users()
+    {
+        return $this->belongsToMany('App\Models\Article');
+    }
 }
