@@ -18,6 +18,7 @@ class CreateArticlesTable extends Migration
             $table->string('title')->default('none');
             $table->string('text');
             $table->timestamps();
+            //$table->softDeletes(); // <-- This will add a deleted_at field
         });
     }
 

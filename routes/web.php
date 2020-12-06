@@ -22,12 +22,17 @@ Route::get('/profile/password', ['uses'=>'UserController@editPassword', 'as'=>'u
 Route::post('/profile/password', ['uses'=>'UserController@updatePassword', 'as'=>'users.update_password']);
 */
 
-
 Route::get('/', function () {
     return view('index');
 });
 
-Route::resource('user', UserController::class);
+Route::get('/login', function () {
+    return abort('403');
+})->name('login');
+
+Route::group(['middleware' => ['auth']], function() {
+    Route::resource('user', UserController::class);
+});
 
 // Test actions
 Route::get('/test', [TestController::class, 'show']);
