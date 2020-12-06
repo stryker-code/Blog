@@ -41,4 +41,4 @@
             </div>
         </article>
     @endif
-</div><!-- main-content -->
+</div>

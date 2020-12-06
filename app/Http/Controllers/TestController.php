@@ -10,7 +10,7 @@ class TestController extends Controller
 {
     public function show()
     {
-        return view('article_test');
+        return view('articles.article_test');
     }
 
     /**
