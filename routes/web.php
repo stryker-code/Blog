@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/add/article', function () {
-    return view('article_test');
-});
+Route::get('/test', [TestController::class, 'show']);
+
+Route::post(
+    '/article/add',
+    [TestController::class, 'post']
+)->name('add-article');

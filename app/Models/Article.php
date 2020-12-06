@@ -14,6 +14,6 @@ class Article extends Model
      */
     public function users()
     {
-        return $this->belongsToMany('App\Models\Article');
+        return $this->belongsToMany('App\Models\User');
     }
 }

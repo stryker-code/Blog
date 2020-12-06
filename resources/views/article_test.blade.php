@@ -7,7 +7,8 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <form>
+            <form action="{{ route('add-article') }}" method="POST">
+                @csrf
                 <div id="contact-form" class="form-container" data-form-container style="color: rgb(46, 125, 50); background: rgb(200, 230, 201);">
                     <div class="row">
                         <div class="form-title">
@@ -18,18 +19,18 @@
                         <div class="row">
 					        <span class="req-input valid" >
 						        <span class="input-status" data-toggle="tooltip" data-placement="top" title="Input your post title."> </span>
-						        <input type="text" data-min-length="8" placeholder="Post Title" value="testing post">
+						        <input name="postName" type="text" data-min-length="8" placeholder="Post Title" value="testing post">
 					        </span>
                         </div>
                         <div class="row">
 					        <span class="req-input message-box valid">
 						        <span class="input-status" data-toggle="tooltip" data-placement="top" title="Post Contents."> </span>
-						        <textarea type="textarea" data-min-length="10" placeholder="Post Contents">Valid contents
+						        <textarea name="postContent" type="textarea" data-min-length="10" placeholder="Post Contents">
                                 </textarea>
                             </span>
                         </div>
                         <div class="row submit-row">
-                            <button type="button" class="btn btn-block submit-form valid">Submit</button>
+                            <button type="submit" class="btn btn-block submit-form valid">Submit</button>
                         </div>
                     </div>
                 </div>
